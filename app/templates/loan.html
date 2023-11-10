@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loan.css') }}">
+{% endblock %}
+
+{% block title %}Request Loan{% endblock %}
+
+{% block content %}
+    <section id="loan">
+        <section id="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="container">
+                    <div class="{{ category }}">
+                        {{ message }}
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </section>
+        <div class="container">
+            <div>
+                <h2>Request Loan Form</h2>
+                <p>Fill the form below to request for a loan.</p>                    
+            </div>
+            <form action="{{ url_for('index.request_loan') }}" method="post">
+                {{ form.csrf_token }}
+                <div class="form-field">
+                    {{ form.applicant_fullname.label }}
+                    {{ form.applicant_fullname }}
+                </div>
+                <div class="form-field">
+                    {{ form.applicant_email.label }}
+                    {{ form.applicant_email }}
+                </div>
+                <div class="form-field">
+                    {{ form.applicant_phone.label }}
+                    {{ form.applicant_phone }}
+                </div>
+                <div class="form-field">
+                    {{ form.applicant_address.label }}
+                    {{ form.applicant_address }}
+                </div>
+                <div class="form-field">
+                    {{ form.applicant_location.label }}
+                    {{ form.applicant_location }}
+                </div>
+                <div class="form-field">
+                    {{ form.applicant_employment_status.label }}
+                    {{ form.applicant_employment_status }}
+                </div>
+                <div class="form-field">
+                    {{ form.purpose_loan.label }}
+                    {{ form.purpose_loan }}
+                </div>
+                <div class="form-field">
+                    {{ form.amount.label }}
+                    {{ form.amount }}
+                </div>
+                
+                <h3>Guarantor Information</h3>
+                <div class="form-field">
+                    {{ form.guanrantor_fullname.label }}
+                    {{ form.guanrantor_fullname }}
+                </div>
+                <div class="form-field">
+                    {{ form.guanrantor_email.label }}
+                    {{ form.guanrantor_email }}
+                </div>
+                <div class="form-field">
+                    {{ form.guanrantor_phone.label }}
+                    {{ form.guanrantor_phone }}
+                </div>
+                <div class="form-field">
+                    {{ form.guanrantor_address.label }}
+                    {{ form.guanrantor_address }}
+                </div>
+                <div class="form-field">
+                    {{ form.guarantor_relationship_to_applicant.label }}
+                    {{ form.guarantor_relationship_to_applicant }}
+                </div>
+                {{ form.submit(class="btn") }}
+            </form>
+        </div>
+    </section>
+{% endblock %}

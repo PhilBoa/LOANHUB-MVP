@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}LoanHub{% endblock %}
+
+{% block content %}
+
+    <!-- main -->
+    <main>
+        <section id="hero">
+            <section id="flash-messages">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="container">
+                        <div class="{{ category }}">
+                            {{ message }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </section>
+            <div class="container">
+                <p>
+                    Welcome to LoanHub, where your dreams find the support they need to thrive. Our seamless loan application process is designed with your convenience in mind. Let us help you achieve your goals and aspirations with our flexible and tailored loan options. Take the first step towards a brighter future today!
+                </p>
+                <a href="{{ url_for('index.request_loan_form') }}">Apply for a loan</a>
+            </div>
+        </section>
+        <section id="feature">
+            <div class="container">
+                <h2>Feature</h2>
+                <hr>
+                <p>
+                    At LoanHub, we've designed our platform to provide you with the best possible experience when it comes to securing the financial support you need. Here are some of the key features that make LoanHub stand out:
+                </p>
+                    <ul>
+                        <li>
+                            User-Friendly Interface: Our website is intuitively designed, making it easy for you to navigate, explore loan options, and complete your application hassle-free.
+                        </li>
+                        <li>
+                            Loan Options for Every Need: Whether you're looking for a personal loan, a business loan, or a specialized loan product, LoanHub offers a wide range of loan options to cater to your specific financial requirements.
+                        </li>
+                    </ul>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>
+                    At LoanHub, we're on a mission to empower your financial dreams. We understand that life is full of opportunities and challenges, and sometimes, you need a helping hand to seize those opportunities or overcome those challenges. That's where we come in.
+                </p>
+                <p>
+                    We're not just another loan service; we're your financial partner. We're committed to making the lending process straightforward, accessible, and transparent. We believe everyone deserves a fair shot at achieving their goals, and that's why we offer a range of loan options to suit your unique needs and circumstances.
+                </p>
+            </div>
+        </section>
+    </main>
+{% endblock %}

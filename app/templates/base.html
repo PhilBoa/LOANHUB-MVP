@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    {% block styles %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <h1>
+                Loan<span class="highlight">Hub</span>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index.request_loan_form') }}">Request Loan</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="container">
+            <h3>Loan<span>Hub</span></h3>
+            <p>&copy; Copyright 2023 all rights reserved.</p>            
+        </div>
+    </footer>
+</body>
+</html>
