@@ -3,7 +3,7 @@ An Automated Online Loan Application
 
 Introduction
 
-LoanHub is a comprehensive financial application designed to simplify and streamline the loan application process. Our goal is to provide users with a user-friendly platform to explore loan options, compare rates, and make informed financial decisions. This project aims to eradicate congestion at banking halls and credit facilities by offering a digital alternative for users to manage their loan applications seamlessly.
+LoanHub is a comprehensive financial application designed to simplify and streamline the loan application process. My goal is to provide users with a user-friendly platform to explore loan options, compare rates, and make informed financial decisions. This project aims to eradicate congestion at banking halls and credit facilities by offering a digital alternative for users to manage their loan applications seamlessly.
 
 https://philicbrefo98.wixsite.com/loanhub
 
